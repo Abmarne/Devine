@@ -1,9 +1,9 @@
 
 import { FaBars } from "react-icons/fa";
-import { NavLink as Link } from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Logo = styled.div`
+export const NavbarLogo = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,7 @@ export const Logo = styled.div`
     margin: 0 2rem 0 0;
     border-radius: 12px;
     overflow: hidden;
-    background: #fff;
+    background: #ffffffff;
     img {
         width: 100%;
         height: 100%;
@@ -24,8 +24,8 @@ export const Logo = styled.div`
     }
 `;
 
-export const Nav = styled.nav`
-    background: #58e16cff;
+export const Navbar = styled.nav`
+    background: #ffffffff;
     height: 85px;
     width: 100%;
     display: flex;
@@ -35,8 +35,8 @@ export const Nav = styled.nav`
     z-index: 12;
 `;
 
-export const NavLink = styled(Link)`
-    color: #ffffffff;
+export const NavbarButton = styled(RouterLink)`
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,17 +45,23 @@ export const NavLink = styled(Link)`
     height: 100%;
     cursor: pointer;
     transition: font-size 0.2s, color 0.2s;
-    &.active {
-        color: #5100ffff;
+    &[aria-current="page"] {
+        color: #000;
+        font-weight: 600;
     }
     &:hover {
+        color: #b2ffb2;
         font-size: 1.25em;
+    }
+    &.active {
+        color: #1b671b;
+        font-weight: 700;
     }
 `;
 
 export const Bars = styled(FaBars)`
     display: none;
-    color: #ffffffff;
+    color: #000;
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -67,11 +73,17 @@ export const Bars = styled(FaBars)`
     }
 `;
 
-export const NavMenu = styled.div`
+export const NavbarButtons = styled.div`
     display: flex;
     align-items: center;
     margin-right: 1rem;
     margin-left: auto;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    &:hover {
+        color: green;
+    }
     @media screen and (max-width: 768px) {
         display: none;
     }

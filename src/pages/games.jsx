@@ -26,21 +26,8 @@ const gameList = [
 
 const Games = () => {
     return (
-        <div style={{textAlign: "center"}}>
-            <h1>Cognitive Exercises</h1>
-            <p style={{fontSize: "24px", color: "#6759ffff"}}>
-                Select any exercise below to begin
-            </p>
-            <GamesGrid>
-                {gameList.map((game, idx) => (
-                    <GamePanel key={idx}>
-                        <GameIcon>{game.icon}</GameIcon>
-                        <GameTitle>{game.title}</GameTitle>
-                        <GameDescription>{game.description}</GameDescription>
-                    </GamePanel>
-                ))}
-            </GamesGrid>
-        </div>
+        <>
+        </>
     );
 };
 

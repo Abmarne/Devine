@@ -1,5 +1,5 @@
 
-import Navbar from "./components/Navbar";
+import NavbarElement from "./components/Navbar";
 import Footer from "./components/Footer";
 import {
     BrowserRouter as Router,
@@ -7,18 +7,18 @@ import {
     Route,
 } from "react-router-dom";
 import Home from "./pages";
-import Login from "./pages/login";
 import Games from "./pages/games";
+import Connect from "./pages/connect";
 
 function App() {
     return (
         <Router>
-            <Navbar />
+            <NavbarElement />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/login" element={<Login />} />
                 <Route path="/games" element={<Games />} />
+                <Route path="/connect" element={<Connect />} />
             </Routes>
             <Footer />
         </Router>

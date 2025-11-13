@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterBar = styled.footer`
-    background: #58e16cff;
+    background: #1b671b;
     height: 85px;
     width: 100%;
     display: flex;
