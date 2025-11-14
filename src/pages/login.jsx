@@ -6,16 +6,13 @@ const Login = () => {
     return (
         <div
             style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh', 
+            position: 'relative',
+            width: '100%',
+            minHeight: '100vh',
             backgroundImage: `url(${Devine_Tree})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            zIndex: -1,
             }}
         >
             <h1
@@ -31,23 +28,60 @@ const Login = () => {
             </h1>
             <div style = {{
                 display: 'flex',
-                
+                flexDirection: 'column',
+                padding: '0.5rem 0.5rem',
+                backgroundColor: '#fff',
+                border: '8px solid #b2ffb2',
+                borderRadius: '8px',
+                maxWidth: '400px',
+                maxHeight: '600px',
+                margin: '0 auto',
             }}>
                 <h2 style = {{color: '#1b671b', fontFamily: "'Lexend', sans-serif",
-                            fontSize: '2rem', marginBottom: '1rem', fontWeight: '1000'}}>
+                            fontSize: '3rem', margin: '0.5rem 0.5rem', fontWeight: '1000',
+                            textAlign: 'center'}}>
                     Sign-In
                 </h2>
-                <form>
+                <form style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+
                     <label style = {{color: '#000', fontFamily: "'Lexend', sans-serif",
-                            fontSize: '1.6rem', marginBottom: '0.5rem', fontWeight: '600'}}>Email</label>
-                    <input type="email"></input>
+                            fontSize: '2rem', marginBottom: '0.5rem', fontWeight: '400',
+                            textAlign: 'center'}}>Email</label>
+                    <input 
+                        type="email"
+                        style={{
+                            backgroundColor: '#fff',
+                            color: '#000',
+                            border: '3px solid #000',
+                            borderRadius: '4px',
+                            padding: '0.5rem',
+                            margin: '0 auto 0.25rem',
+                            width: '65%',
+                            fontSize: '1.2rem'
+                        }}
+                    />
                     <label style = {{color: '#000', fontFamily: "'Lexend', sans-serif",
-                            fontSize: '1.6rem', marginBottom: '0.5rem', fontWeight: '600'}}>Password</label>
-                    <input type="password"></input>
+                            fontSize: '2rem', marginBottom: '0.5rem', fontWeight: '400',
+                            textAlign: 'center'}}>Password</label>
+                    <input 
+                        type="password"
+                        style={{
+                            backgroundColor: '#fff',
+                            color: '#000',
+                            border: '3px solid #000',
+                            borderRadius: '4px',
+                            padding: '0.5rem',
+                            margin: '0 auto 0.25rem',
+                            width: '65%',
+                            fontSize: '1.2rem'
+                        }}
+                    />
                 </form>
-                <a style = {{color: 'gray'}}>Need to Register?</a>
-                <a style = {{color: 'gray'}}>Forgot Password?</a>
-                <img src={play_button} alt="Login" style={{ height: '4rem' }} />
+                <a style = {{color: 'gray', textAlign: 'left', marginTop: '0.5rem'}}>Need to Register?</a>
+                <a style = {{color: 'gray', textAlign: 'left', marginTop: '0.5rem'}}>Forgot Password?</a>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
+                <img src={play_button} alt="Login" style={{ height: '4rem', width: '4rem' }} />
+                </div>
             </div>
         </div>
     );

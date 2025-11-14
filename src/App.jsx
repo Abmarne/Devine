@@ -5,6 +5,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
+    useLocation,
 } from "react-router-dom";
 import Home from "./pages";
 import Games from "./pages/games";
@@ -12,9 +13,12 @@ import Connect from "./pages/connect";
 import Login from "./pages/login";
 import Register from "./pages/register";
 
-function App() {
+function AppShell() {
+    const location = useLocation();
+    const hideFooter = location.pathname === "/login" || location.pathname === "/register";
+
     return (
-        <Router>
+        <>
             <NavbarElement />
             <main style={{ minHeight: '100vh' }}>
                 <Routes>
@@ -26,7 +30,15 @@ function App() {
                     <Route path="/register" element={<Register />} />
                 </Routes>
             </main>
-            <Footer />
+            {!hideFooter && <Footer />}
+        </>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <AppShell />
         </Router>
     );
 }

@@ -1,4 +1,6 @@
+
 import Devine_Tree from '../../src/assets/Devine_Tree.png';
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
