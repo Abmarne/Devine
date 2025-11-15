@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,7 +24,7 @@ app.post('/api/send-thank-you', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: 'yourgmail@gmail.com',
+      from: process.env.GMAIL_USER,
       to: email,
       subject: 'Thanks for Registering!',
       text: 'Thank you for registering!',
@@ -36,3 +37,4 @@ app.post('/api/send-thank-you', async (req, res) => {
   }
 });
 
+app.listen(PORT);
