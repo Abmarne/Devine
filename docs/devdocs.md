@@ -23,3 +23,7 @@ This policy concerns the formal review of code before branch commits.
 1. **Independent Branch:** If a developer is working on a branch that is solely their responsibility, no code review is required prior to a push.
 2. **Shared Branch:** If more than one developer are working on a branch, then a pull request must be generated so that the code from each developer is closely evaluated prior to commiting.
 3. **Parent Directory:** If a branch has more than one sub-branches, and a developer must merge changes from one of the subranches, then the developer must create a pull request and evaluate the code with other developers actively working on the other sub-branches.
+
+---
+
+### **Code Development & Review Policy**
