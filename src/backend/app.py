@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, g, abort
+from flask import Flask, redirect, request, url_for, g, abort
 import click
 import sqlite3
 from pathlib import Path
@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 # Ensure instance exists and place DB there
 Path(app.instance_path).mkdir(parents=True, exist_ok=True)
-DATABASE_NAME = "???"
-DATABASE = Path(app.instance_path) / DATABASE_NAME
+DATABASE_NAME = "game_entry"
+DATABASE_PATH = Path(app.instance_path) / DATABASE_NAME
 
 
 # =========================
@@ -19,7 +19,7 @@ DATABASE = Path(app.instance_path) / DATABASE_NAME
 def connect_database() -> sqlite3.Connection:
     """Return a per-request SQLite connection stored on flask.g."""
     if 'db' not in g:
-        conn = sqlite3.connect(DATABASE)
+        conn = sqlite3.connect(DATABASE_PATH)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA foreign_keys = ON;")
         g.db = conn
@@ -44,7 +44,7 @@ def initialize_database() -> None:
 
 def delete_database() -> bool:
     click.echo(f"Deleting database...")
-    db_path = Path(DATABASE)
+    db_path = Path(DATABASE_PATH)
     if db_path.exists():
         db_path.unlink()
         click.echo(f"Deleted {db_path}")
@@ -57,20 +57,20 @@ def delete_database() -> bool:
 # =========================
 # Routes
 # =========================
-@app.route('/', methods=["GET", "POST"])
-def login(): ...
+# @app.route('/', methods=["GET", "POST"])
+# def login(): ...
 
-@app.post("/<insert here>/<int:id>/delete")
-def delete_entry(id: int):
-    """Delete a person and redirect back to the table (no separate page)."""
-    db = connect_database()
-    db.execute("DELETE FROM people WHERE id = ?", (id,))
-    db.commit()
+# @app.post("/<insert here>/<int:id>/delete")
+# def delete_entry(id: int):
+#     """Delete a person and redirect back to the table (no separate page)."""
+#     db = connect_database()
+#     db.execute("DELETE FROM people WHERE id = ?", (id,))
+#     db.commit()
 
-    return redirect(url_for("people"))
+#     return redirect(url_for("people"))
 
 # @app.post("/<insert here>/<int:id>/update")
-# def person_update(id: int):
+# def entry_update(id: int):
 #     f = request.form
 #     fields = (
 #         f.get('<key goes here>','').strip(),
