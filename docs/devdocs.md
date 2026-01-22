@@ -11,9 +11,9 @@
 ![Devine File Tree Structure](Devine_Architecture.png)
 
 ## Standards/Documentation References
-https://www.altexsoft.com/blog/technical-documentation-in-software-development-types-best-practices-and-tools/
-https://medium.com/@sarvt/why-file-structure-is-important-organizing-for-efficiency-and-scalability-056b12f42e43
-https://appliedtechnology.github.io/protips/folderstructure.html
+1. https://www.altexsoft.com/blog/technical-documentation-in-software-development-types-best-practices-and-tools/
+2. https://medium.com/@sarvt/why-file-structure-is-important-organizing-for-efficiency-and-scalability-056b12f42e43
+3. https://appliedtechnology.github.io/protips/folderstructure.html
 
 ---
 
